@@ -1,0 +1,4 @@
+template: nav.php
+
+fields:
+  links: array

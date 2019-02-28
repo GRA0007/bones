@@ -1,19 +1,29 @@
 meta:
-  title: Title
-  description: Something
+    title: Bones CMS
+    description: Bones is a simple, flat-file CMS that uses modules and components to build a static website.
 
 content:
-  module1:
-    field1: Something
-    field2: >
-      Some text that
-      goes over multiple
-      lines.
-    field3: |
-      Some more text,
-      but this time the line breaks are
-      preserved.
-      
-  module2:
-    field1: res/img/logo.svg
-    field2: [500px, 500px]
+    header:
+        image:
+            src: res/img/logo.svg
+            width: 200px
+        title: Bones
+        description: Bones is a simple, flat-file CMS that uses modules and components to build a static website.
+
+    nav:
+        links:
+            Home: /
+            YAML: /yaml/
+            Credit: /credit/
+
+    text:
+        body: >
+            Bones uses PHP files as modules, which make up pages. The pages are fully written in YAML,
+            which can be edited with rich forms in the CMS. The module template files can use the values
+            defined in the YAML like an API.
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

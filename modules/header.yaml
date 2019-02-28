@@ -1,0 +1,9 @@
+template: header.php
+
+fields:
+    image:
+        src: image
+        height: dimension
+        width: dimension
+    title: string
+    description: text

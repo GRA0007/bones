@@ -1,6 +1,0 @@
-template: module1.php
-
-fields:
-  field1: string
-  field2: string
-  field3: string

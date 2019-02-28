@@ -1,0 +1,15 @@
+{
+    "name": "gra0007/bones",
+    "description": "Bones is a simple, flat-file CMS that uses modules and components to build a static website.",
+    "type": "project",
+    "require": {
+        "mustangostang/spyc": "^0.6.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benjamin Grant",
+            "email": "benjamin.grantGRA0007@gmail.com"
+        }
+    ]
+}

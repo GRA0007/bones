@@ -1,4 +1,6 @@
 <?php
+require_once('vendor/autoload.php');
+
 $htaccess = fopen('.htaccess', 'w+');
 fwrite($htaccess, 'RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -23,5 +25,15 @@ $path_components = explode('/', $path);
 		<strong>Request URI:</strong> <?php echo $path; ?>
 
 		<pre><?php print_r($path_components); ?></pre>
+
+		<strong>Page:</strong><br><br>
+		<?php
+		$page = Spyc::YAMLLoad('pages/_home.yaml');
+
+		foreach ($page['content'] as $module_name => $fields) {
+			$module = Spyc::YAMLLoad('modules/' . $module_name . '.yaml');
+			include('modules/templates/' . $module['template']);
+		}
+		?>
 	</body>
 </html>

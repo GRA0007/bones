@@ -1,0 +1,19 @@
+meta:
+  title: Title
+  description: Something
+
+content:
+  module1:
+    field1: Something
+    field2: >
+      Some text that
+      goes over multiple
+      lines.
+    field3: |
+      Some more text,
+      but this time the line breaks are
+      preserved.
+      
+  module2:
+    field1: res/img/logo.svg
+    field2: [500px, 500px]

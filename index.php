@@ -20,8 +20,13 @@ if ($home_url == '/') {
 }
 
 $page_name = $config['default_page'];
-if ($path != '')
-	$page_name = $path;
+if ($path != '') {
+	if (array_key_exists('routes', $config) && array_key_exists($path, $config['routes'])) {
+		$page_name = $config['routes'][$path];
+	} else {
+		$page_name = $path;
+	}
+}
 
 if (!file_exists('pages/' . $page_name . '.yaml')) {
 	http_response_code(404);

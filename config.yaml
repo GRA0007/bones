@@ -5,4 +5,4 @@ default_page: _home
 main_css: _main.css
 
 routes:
-    "secret/page": super_secret.yaml
+    "secret/page": credit

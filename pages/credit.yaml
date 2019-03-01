@@ -1,0 +1,31 @@
+# Page: credit
+
+meta:
+    title: Credit
+    description: All the cool code written by the community that makes Bones possible.
+
+content:
+    header:
+        image:
+            src: logo.svg
+            width: 200px
+        title: Bones
+
+    nav:
+        links:
+          - text: Home
+            link: /
+
+          - text: YAML
+            link: /yaml/
+
+          - text: Credit
+            link: /credit/
+
+    text:
+        body: "Thanks to the following"
+
+    link-list:
+        links:
+          - text: mustangostang/spyc
+            link: https://github.com/mustangostang/spyc

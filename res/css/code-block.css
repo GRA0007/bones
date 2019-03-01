@@ -1,0 +1,9 @@
+pre {
+	width: 100%;
+	overflow-x: auto;
+	background-color: #666;
+	color: #EEE;
+	box-sizing: border-box;
+	padding: 10px 14px;
+	border-radius: 3px;
+}

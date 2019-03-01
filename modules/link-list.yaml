@@ -1,0 +1,12 @@
+# Module: link-list
+
+template: link-list.php
+
+fields:
+    links:
+        type: component-array
+        fields:
+            text:
+                type: string
+            link:
+                type: string

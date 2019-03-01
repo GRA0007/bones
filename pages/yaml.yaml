@@ -1,0 +1,61 @@
+# Page: yaml
+
+meta:
+    title: YAML
+    description: Bones uses simple YAML files to define the content and structure of the site.
+
+content:
+    header:
+        image:
+            src: logo.svg
+            width: 200px
+        title: Bones
+
+    nav:
+        links:
+          - text: Home
+            link: /
+
+          - text: YAML
+            link: /yaml/
+
+          - text: Credit
+            link: /credit/
+
+    text:
+        body: "Sample YAML file for a page:"
+
+    code-block:
+        language: yaml
+        code: |
+            # Page: _home (default page)
+
+            meta:
+                title: Sample Page
+                description: This page is just a sample
+
+            content:
+                header:
+                    image:
+                        src: image.png
+                        width: 200px
+                    title: Sample Page
+
+                nav:
+                    links:
+                      - text: Home
+                        link: /
+
+                      - text: About
+                        link: /about/
+
+                text:
+                    body: >
+                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    text[2]:
+        body: Nice!

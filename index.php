@@ -11,7 +11,7 @@ fclose($htaccess);
 
 $config = Spyc::YAMLLoad('config.yaml');
 
-$path = str_replace(str_replace('index.php', '', $_SERVER['SCRIPT_NAME']), '', $_SERVER['REQUEST_URI']);
+$path = rtrim(str_replace(str_replace('index.php', '', $_SERVER['SCRIPT_NAME']), '', $_SERVER['REQUEST_URI']), '/');
 $path_components = explode('/', $path);
 
 $home_url = dirname($_SERVER['SCRIPT_NAME']);
@@ -19,7 +19,16 @@ if ($home_url == '/') {
 	$home_url = '';
 }
 
-$page = Spyc::YAMLLoad('pages/' . $config['default_page'] . '.yaml');
+$page_name = $config['default_page'];
+if ($path != '')
+	$page_name = $path;
+
+if (!file_exists('pages/' . $page_name . '.yaml')) {
+	http_response_code(404);
+	exit;
+}
+
+$page = Spyc::YAMLLoad('pages/' . $page_name . '.yaml');
 
 $page_title = $page['meta']['title'];
 if ($path != '') {
@@ -47,6 +56,7 @@ if ($path != '') {
 
 		<?php
 		foreach ($page['content'] as $module_name => $data) {
+			$module_name = preg_replace('/\[.*?\]/', '', $module_name);
 			$module = Spyc::YAMLLoad('modules/' . $module_name . '.yaml');
 			$fields = preprocess($module_name, $data, $module);
 			include('modules/templates/' . $module['template']);

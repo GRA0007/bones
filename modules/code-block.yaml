@@ -1,0 +1,10 @@
+# Module: code-block
+
+template: code-block.php
+
+fields:
+    language:
+        type: code-language-dropdown
+        default: 0
+    code:
+        type: code-block

@@ -1,0 +1,4 @@
+# Type: paragraphs
+
+primitive: textarea
+preprocess: nl2p

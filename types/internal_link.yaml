@@ -1,0 +1,5 @@
+# Type: internal_link
+
+primitive: text
+preprocess: internal_link
+placeholder: /page/subpage/

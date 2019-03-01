@@ -1,3 +1,5 @@
+# Page: _home (default page)
+
 meta:
     title: Bones CMS
     description: Bones is a simple, flat-file CMS that uses modules and components to build a static website.
@@ -5,16 +7,21 @@ meta:
 content:
     header:
         image:
-            src: res/img/logo.svg
+            src: logo.svg
             width: 200px
         title: Bones
         description: Bones is a simple, flat-file CMS that uses modules and components to build a static website.
 
     nav:
         links:
-            Home: /
-            YAML: /yaml/
-            Credit: /credit/
+          - text: Home
+            link: /
+
+          - text: YAML
+            link: /yaml/
+
+          - text: Credit
+            link: /credit/
 
     text:
         body: >

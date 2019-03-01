@@ -1,4 +1,7 @@
+# Module: text
+
 template: text.php
 
 fields:
-    body: text
+    body:
+        type: paragraphs

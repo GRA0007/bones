@@ -1,0 +1,5 @@
+# Type: image
+
+primitive: file
+preprocess: image_link
+attributes: accept="image/*"

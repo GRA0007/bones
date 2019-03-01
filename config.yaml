@@ -1,3 +1,5 @@
+# Site config
+
 title_suffix: | Bones
 default_page: _home
 main_css: _main.css

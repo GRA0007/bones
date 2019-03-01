@@ -1,9 +1,21 @@
+# Module: header
+
 template: header.php
 
 fields:
     image:
-        src: image
-        height: dimension
-        width: dimension
-    title: string
-    description: text
+        type: component
+        fields:
+            src:
+                type: image
+            height:
+                type: dimension
+                default: initial
+            width:
+                type: dimension
+                default: initial
+    title:
+        type: heading
+    description:
+        type: text
+        default: ''

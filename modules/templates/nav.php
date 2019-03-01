@@ -1,5 +1,5 @@
 <nav>
-	<?php foreach ($fields['links'] as $name => $url) { ?>
-		<a href="<?php echo $url; ?>"><?php echo $name; ?></a>
+	<?php foreach ($fields['links'] as $data) { ?>
+		<a href="<?php echo $data['link']; ?>"><?php echo $data['text']; ?></a>
 	<?php } ?>
 </nav>

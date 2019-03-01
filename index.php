@@ -1,5 +1,6 @@
 <?php
 require_once('vendor/autoload.php');
+require_once('bones/php/render_functions.php');
 
 $htaccess = fopen('.htaccess', 'w+');
 fwrite($htaccess, 'RewriteEngine on
@@ -12,6 +13,11 @@ $config = Spyc::YAMLLoad('config.yaml');
 
 $path = str_replace(str_replace('index.php', '', $_SERVER['SCRIPT_NAME']), '', $_SERVER['REQUEST_URI']);
 $path_components = explode('/', $path);
+
+$home_url = dirname($_SERVER['SCRIPT_NAME']);
+if ($home_url == '/') {
+	$home_url = '';
+}
 
 $page = Spyc::YAMLLoad('pages/' . $config['default_page'] . '.yaml');
 
@@ -28,7 +34,7 @@ if ($path != '') {
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		<meta name="description" content="<?php echo $page['meta']['description']; ?>">
 
-		<link rel="stylesheet" href="res/css/<?php echo $config['main_css']; ?>" />
+		<link rel="stylesheet" href="<?php echo $home_url; ?>/res/css/<?php echo $config['main_css']; ?>" />
 		<style><?php
 		foreach ($page['content'] as $module_name => $fields) {
 			if (file_exists('res/css/' . $module_name . '.css'))
@@ -40,8 +46,9 @@ if ($path != '') {
 		<pre style="display:none;"><?php print_r($path_components); ?></pre>
 
 		<?php
-		foreach ($page['content'] as $module_name => $fields) {
+		foreach ($page['content'] as $module_name => $data) {
 			$module = Spyc::YAMLLoad('modules/' . $module_name . '.yaml');
+			$fields = preprocess($module_name, $data, $module);
 			include('modules/templates/' . $module['template']);
 		}
 		?>

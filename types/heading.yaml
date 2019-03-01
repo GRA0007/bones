@@ -1,0 +1,6 @@
+# Type: heading
+
+primitive: text
+style:
+    font-size: 20px
+    font-weight: bold

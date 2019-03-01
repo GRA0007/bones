@@ -1,4 +1,12 @@
+# Module: nav
+
 template: nav.php
 
 fields:
-  links: array
+    links:
+        type: component-array
+        fields:
+            text:
+                type: string
+            link:
+                type: internal_link
